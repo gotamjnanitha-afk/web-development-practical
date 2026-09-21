@@ -3,8 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>Responsive Webpage</title>
+    <title>CSS Question 13 - Registration Form</title>
 
     <style>
         * {
@@ -15,111 +14,187 @@
 
         body {
             font-family: Arial, sans-serif;
-            background: #fff5f6;
-            color: #475569;
+            background: linear-gradient(135deg, #fff1f2, #ffe4e6);
+            min-height: 100vh;
+            padding: 30px 15px;
+            color: #450a0a;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: auto;
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 12px 35px rgba(127, 29, 29, 0.18);
+        }
+
+        .header {
+            background: linear-gradient(135deg, #450a0a, #991b1b, #dc2626);
+            color: white;
             text-align: center;
             padding: 40px 20px;
         }
 
-        .container {
-            max-width: 1000px;
-            margin: auto;
-            background: #ffffff;
-            border-radius: 18px;
-            overflow: hidden;
-            box-shadow: 0 10px 30px rgba(127, 29, 29, 0.15);
-        }
-
-        header {
-            background: linear-gradient(135deg, #450a0a, #991b1b, #dc2626);
-            color: #ffffff;
-            padding: 45px 20px;
-        }
-
-        header h1 {
-            font-size: 38px;
+        .header h1 {
+            font-size: 34px;
             margin-bottom: 10px;
         }
 
-        header p {
+        .header p {
             color: #ffe4e6;
-            font-size: 16px;
         }
 
-        main {
-            padding: 40px;
+        form {
+            padding: 35px;
         }
 
-        .content {
-            background: #fff1f2;
-            border-left: 5px solid #dc2626;
-            padding: 30px;
-            border-radius: 12px;
-        }
-
-        .content h2 {
-            color: #991b1b;
-            margin-bottom: 25px;
-        }
-
-        .container-box {
-            display: flex;
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
             gap: 20px;
-            justify-content: center;
-            flex-wrap: wrap;
+            margin-bottom: 20px;
         }
 
-        .box {
-            width: 200px;
-            padding: 30px;
-            border: 2px solid #991b1b;
-            border-radius: 12px;
-            background: #ffffff;
-            color: #991b1b;
-            font-size: 20px;
+        .form-group {
+            display: flex;
+            flex-direction: column;
+        }
+
+        label {
             font-weight: bold;
-            box-shadow: 0 5px 15px rgba(127, 29, 29, 0.1);
+            margin-bottom: 8px;
+            color: #7f1d1d;
+        }
+
+        input,
+        select,
+        textarea {
+            width: 100%;
+            padding: 13px 14px;
+            border: 2px solid #fecdd3;
+            border-radius: 9px;
+            outline: none;
+            font-size: 15px;
+            background: #fffafa;
             transition: 0.3s;
         }
 
-        .box:hover {
+        input:focus,
+        select:focus,
+        textarea:focus {
+            border-color: #dc2626;
+            background: white;
+            box-shadow: 0 0 0 3px #ffe4e6;
+        }
+
+        textarea {
+            min-height: 100px;
+            resize: vertical;
+        }
+
+        .full-width {
+            margin-bottom: 20px;
+        }
+
+        .gender-box {
+            display: flex;
+            gap: 25px;
+            padding: 10px 0;
+        }
+
+        .gender-option {
+            display: flex;
+            align-items: center;
+            gap: 7px;
+        }
+
+        .gender-option input {
+            width: auto;
+            accent-color: #dc2626;
+        }
+
+        .terms {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin: 10px 0 25px;
+        }
+
+        .terms input {
+            width: auto;
+            accent-color: #dc2626;
+        }
+
+        .terms label {
+            margin: 0;
+            font-weight: normal;
+            color: #64748b;
+        }
+
+        .buttons {
+            display: flex;
+            gap: 15px;
+        }
+
+        button {
+            flex: 1;
+            padding: 14px;
+            border: none;
+            border-radius: 9px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .register-btn {
+            background: #991b1b;
+            color: white;
+        }
+
+        .register-btn:hover {
+            background: #7f1d1d;
+            transform: translateY(-2px);
+        }
+
+        .reset-btn {
             background: #ffe4e6;
-            transform: translateY(-5px);
+            color: #991b1b;
+        }
+
+        .reset-btn:hover {
+            background: #fecdd3;
         }
 
         footer {
+            text-align: center;
             background: #450a0a;
             color: #fecdd3;
-            text-align: center;
-            padding: 20px;
+            padding: 18px;
             font-size: 14px;
         }
 
-        @media screen and (max-width: 600px) {
-
+        @media (max-width: 650px) {
             body {
-                padding: 20px 10px;
+                padding: 15px 10px;
             }
 
-            header h1 {
+            .form-row {
+                grid-template-columns: 1fr;
+                gap: 0;
+            }
+
+            form {
+                padding: 25px 20px;
+            }
+
+            .header h1 {
                 font-size: 28px;
             }
 
-            main {
-                padding: 25px 15px;
-            }
-
-            .content {
-                padding: 20px;
-            }
-
-            .container-box {
+            .buttons {
                 flex-direction: column;
-                align-items: center;
-            }
-
-            .box {
-                width: 80%;
             }
         }
     </style>
@@ -129,33 +204,142 @@
 
     <div class="container">
 
-        <header>
-            <h1>Responsive Website</h1>
-            <p>Responsive Design Using CSS Media Queries</p>
-        </header>
+        <div class="header">
+            <h1>Student Registration</h1>
+            <p>Create your student account</p>
+        </div>
 
-        <main>
+        <form>
 
-            <div class="content">
+            <div class="form-row">
 
-                <h2>Web Technologies</h2>
+                <div class="form-group">
+                    <label for="firstName">First Name</label>
+                    <input type="text" id="firstName" placeholder="Enter first name">
+                </div>
 
-                <div class="container-box">
+                <div class="form-group">
+                    <label for="lastName">Last Name</label>
+                    <input type="text" id="lastName" placeholder="Enter last name">
+                </div>
 
-                    <div class="box">HTML</div>
+            </div>
 
-                    <div class="box">CSS</div>
+            <div class="form-row">
 
-                    <div class="box">JavaScript</div>
+                <div class="form-group">
+                    <label for="email">Email Address</label>
+                    <input type="email" id="email" placeholder="example@email.com">
+                </div>
+
+                <div class="form-group">
+                    <label for="phone">Phone Number</label>
+                    <input type="tel" id="phone" placeholder="Enter phone number">
+                </div>
+
+            </div>
+
+            <div class="form-row">
+
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" placeholder="Enter password">
+                </div>
+
+                <div class="form-group">
+                    <label for="dob">Date of Birth</label>
+                    <input type="date" id="dob">
+                </div>
+
+            </div>
+
+            <div class="full-width">
+
+                <label>Gender</label>
+
+                <div class="gender-box">
+
+                    <div class="gender-option">
+                        <input type="radio" id="male" name="gender">
+                        <label for="male">Male</label>
+                    </div>
+
+                    <div class="gender-option">
+                        <input type="radio" id="female" name="gender">
+                        <label for="female">Female</label>
+                    </div>
+
+                    <div class="gender-option">
+                        <input type="radio" id="other" name="gender">
+                        <label for="other">Other</label>
+                    </div>
 
                 </div>
 
             </div>
 
-        </main>
+            <div class="form-row">
+
+                <div class="form-group">
+                    <label for="course">Course</label>
+
+                    <select id="course">
+                        <option>Select Course</option>
+                        <option>Computer Science</option>
+                        <option>Data Science</option>
+                        <option>Artificial Intelligence</option>
+                        <option>Information Technology</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="year">Year</label>
+
+                    <select id="year">
+                        <option>Select Year</option>
+                        <option>First Year</option>
+                        <option>Second Year</option>
+                        <option>Third Year</option>
+                        <option>Fourth Year</option>
+                    </select>
+                </div>
+
+            </div>
+
+            <div class="full-width">
+
+                <label for="address">Address</label>
+
+                <textarea id="address" placeholder="Enter your address"></textarea>
+
+            </div>
+
+            <div class="terms">
+
+                <input type="checkbox" id="terms">
+
+                <label for="terms">
+                    I agree to the terms and conditions
+                </label>
+
+            </div>
+
+            <div class="buttons">
+
+                <button type="submit" class="register-btn">
+                    Register
+                </button>
+
+                <button type="reset" class="reset-btn">
+                    Reset
+                </button>
+
+            </div>
+
+        </form>
 
         <footer>
-            CSS Practical &nbsp; | &nbsp; Responsive Webpage
+            CSS Practical Program 13
         </footer>
 
     </div>

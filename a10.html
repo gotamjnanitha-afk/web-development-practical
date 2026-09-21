@@ -3,8 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>College Timetable</title>
+    <title>CSS Question 10 - Pseudo Classes</title>
 
     <style>
         * {
@@ -16,116 +15,142 @@
         body {
             font-family: Arial, sans-serif;
             background: #fff5f6;
-            color: #475569;
-            padding: 40px 20px;
+            color: #450a0a;
+            padding: 30px 15px;
         }
 
         .container {
-            max-width: 1100px;
+            max-width: 1000px;
             margin: auto;
-            background: #ffffff;
-            border-radius: 18px;
+            background: white;
+            border-radius: 20px;
             overflow: hidden;
             box-shadow: 0 10px 30px rgba(127, 29, 29, 0.15);
         }
 
-        .header {
+        header {
             background: linear-gradient(135deg, #450a0a, #991b1b, #dc2626);
-            color: #ffffff;
+            color: white;
             text-align: center;
             padding: 45px 20px;
         }
 
-        .header h1 {
+        header h1 {
             font-size: 38px;
-            margin-bottom: 8px;
+            margin-bottom: 10px;
         }
 
-        .header p {
+        header p {
             color: #ffe4e6;
-            font-size: 16px;
+            font-size: 17px;
         }
 
-        .content {
+        main {
             padding: 40px;
+            display: grid;
+            gap: 25px;
         }
 
-        .table-box {
+        .card {
             background: #fff1f2;
-            border-left: 5px solid #dc2626;
+            padding: 28px;
+            border-left: 6px solid #b91c1c;
+            border-radius: 15px;
+        }
+
+        .card h2 {
+            color: #991b1b;
+            margin-bottom: 15px;
+        }
+
+        .card p {
+            color: #64748b;
+            line-height: 1.6;
+            margin-bottom: 18px;
+        }
+
+        .demo {
+            background: white;
             padding: 25px;
             border-radius: 12px;
-            overflow-x: auto;
+            border: 2px solid #fecdd3;
         }
 
-        table {
-            width: 100%;
-            min-width: 800px;
-            border-collapse: collapse;
-            background: #ffffff;
-        }
-
-        th {
+        .hover-button {
             background: #991b1b;
-            color: #ffffff;
-            padding: 15px 12px;
-            border: 1px solid #7f1d1d;
-            font-size: 15px;
+            color: white;
+            border: none;
+            padding: 14px 25px;
+            border-radius: 8px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: 0.3s;
         }
 
-        td {
-            padding: 15px 12px;
-            text-align: center;
-            border: 1px solid #fecdd3;
-            font-size: 15px;
+        .hover-button:hover {
+            background: #dc2626;
+            transform: translateY(-3px);
         }
 
-        tr:nth-child(even) td {
-            background: #fff5f6;
+        .active-button {
+            background: #7f1d1d;
+            color: white;
+            border: none;
+            padding: 14px 25px;
+            border-radius: 8px;
+            font-size: 16px;
+            cursor: pointer;
         }
 
-        tr:hover td {
-            background: #ffe4e6;
+        .active-button:active {
+            background: #450a0a;
+            transform: scale(0.9);
         }
 
-        .lunch {
-            background: #fecdd3 !important;
+        .focus-input {
+            width: 100%;
+            max-width: 450px;
+            padding: 14px;
+            border: 2px solid #fecdd3;
+            border-radius: 8px;
+            font-size: 16px;
+            outline: none;
+        }
+
+        .focus-input:focus {
+            border-color: #dc2626;
+            box-shadow: 0 0 0 4px #ffe4e6;
+        }
+
+        .visited-link {
             color: #991b1b;
+            font-size: 18px;
             font-weight: bold;
-            writing-mode: vertical-rl;
-            transform: rotate(180deg);
-            letter-spacing: 2px;
+            text-decoration: none;
         }
 
-        .footer {
+        .visited-link:visited {
+            color: #7f1d1d;
+        }
+
+        footer {
             background: #450a0a;
             color: #fecdd3;
             text-align: center;
             padding: 20px;
-            font-size: 14px;
         }
 
         @media (max-width: 600px) {
             body {
-                padding: 20px 10px;
+                padding: 15px 10px;
             }
 
-            .header h1 {
+            header h1 {
                 font-size: 28px;
             }
 
-            .content {
-                padding: 25px 15px;
-            }
-
-            .table-box {
-                padding: 15px;
-            }
-
-            th,
-            td {
-                padding: 10px 8px;
-                font-size: 13px;
+            main {
+                padding: 20px 15px;
             }
         }
     </style>
@@ -135,76 +160,84 @@
 
     <div class="container">
 
-        <div class="header">
-            <h1>College Timetable</h1>
-            <p>Weekly Class Schedule</p>
-        </div>
+        <header>
+            <h1>CSS Pseudo-Classes</h1>
+            <p>Hover • Active • Focus • Visited</p>
+        </header>
 
-        <div class="content">
+        <main>
 
-            <div class="table-box">
+            <section class="card">
+                <h2>:hover</h2>
 
-                <table border="1" cellpadding="10">
+                <p>
+                    The hover pseudo-class applies a style when the mouse
+                    pointer is placed over an element.
+                </p>
 
-                    <tr>
-                        <th>Day</th>
-                        <th>9-10 AM</th>
-                        <th>10-11 AM</th>
-                        <th>11-12 PM</th>
-                        <th>12-1 PM</th>
-                        <th>2-3 PM</th>
-                    </tr>
+                <div class="demo">
+                    <button class="hover-button">
+                        Move Mouse Over Me
+                    </button>
+                </div>
+            </section>
 
-                    <tr>
-                        <td>Monday</td>
-                        <td>Python</td>
-                        <td>Maths</td>
-                        <td>DSA</td>
-                        <td rowspan="5" class="lunch">Lunch</td>
-                        <td>Web Technology</td>
-                    </tr>
+            <section class="card">
+                <h2>:active</h2>
 
-                    <tr>
-                        <td>Tuesday</td>
-                        <td>DSA</td>
-                        <td>Python</td>
-                        <td>English</td>
-                        <td>Maths</td>
-                    </tr>
+                <p>
+                    The active pseudo-class applies a style while an element
+                    is being clicked.
+                </p>
 
-                    <tr>
-                        <td>Wednesday</td>
-                        <td>Maths</td>
-                        <td>Web Technology</td>
-                        <td>Python</td>
-                        <td>DSA</td>
-                    </tr>
+                <div class="demo">
+                    <button class="active-button">
+                        Click and Hold Me
+                    </button>
+                </div>
+            </section>
 
-                    <tr>
-                        <td>Thursday</td>
-                        <td>English</td>
-                        <td>DSA</td>
-                        <td>Maths</td>
-                        <td>Python</td>
-                    </tr>
+            <section class="card">
+                <h2>:focus</h2>
 
-                    <tr>
-                        <td>Friday</td>
-                        <td>Python</td>
-                        <td>Maths</td>
-                        <td>DSA</td>
-                        <td>Web Technology</td>
-                    </tr>
+                <p>
+                    The focus pseudo-class applies a style when an input
+                    element receives focus.
+                </p>
 
-                </table>
+                <div class="demo">
+                    <input
+                        type="text"
+                        class="focus-input"
+                        placeholder="Click inside this input"
+                    >
+                </div>
+            </section>
 
-            </div>
+            <section class="card">
+                <h2>:visited</h2>
 
-        </div>
+                <p>
+                    The visited pseudo-class changes the appearance of a
+                    link after it has been visited.
+                </p>
 
-        <div class="footer">
-            HTML Practical &nbsp; | &nbsp; College Timetable
-        </div>
+                <div class="demo">
+                    <a
+                        href="https://www.wikipedia.org"
+                        target="_blank"
+                        class="visited-link"
+                    >
+                        Visit Wikipedia
+                    </a>
+                </div>
+            </section>
+
+        </main>
+
+        <footer>
+            CSS Practical Program 10
+        </footer>
 
     </div>
 

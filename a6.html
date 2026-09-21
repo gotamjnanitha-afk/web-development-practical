@@ -3,8 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>Audio and Video</title>
+    <title>CSS Question 6 - Width Height and Sizing</title>
 
     <style>
         * {
@@ -16,102 +15,128 @@
         body {
             font-family: Arial, sans-serif;
             background: #fff5f6;
-            color: #475569;
-            line-height: 1.6;
-            padding: 40px 20px;
+            color: #450a0a;
+            padding: 30px 15px;
         }
 
         .container {
-            max-width: 900px;
+            max-width: 1000px;
             margin: auto;
-            background: #ffffff;
-            border-radius: 18px;
+            background: white;
+            border-radius: 20px;
             overflow: hidden;
             box-shadow: 0 10px 30px rgba(127, 29, 29, 0.15);
         }
 
-        .header {
+        header {
             background: linear-gradient(135deg, #450a0a, #991b1b, #dc2626);
             color: white;
             text-align: center;
-            padding: 45px 25px;
+            padding: 45px 20px;
         }
 
-        .header h1 {
-            font-size: 36px;
+        header h1 {
+            font-size: 38px;
             margin-bottom: 10px;
         }
 
-        .header p {
+        header p {
             color: #ffe4e6;
-            font-size: 16px;
+            font-size: 17px;
         }
 
-        .content {
+        main {
             padding: 40px;
+            display: grid;
+            gap: 25px;
         }
 
-        .media-section {
+        .card {
             background: #fff1f2;
-            border-left: 5px solid #dc2626;
-            padding: 30px;
-            margin-bottom: 25px;
-            border-radius: 12px;
-            text-align: center;
+            padding: 25px;
+            border-radius: 15px;
+            border-left: 6px solid #b91c1c;
         }
 
-        h2 {
+        .card h2 {
             color: #991b1b;
-            font-size: 26px;
-            margin-bottom: 20px;
+            margin-bottom: 18px;
         }
 
-        audio {
-            width: 100%;
-            max-width: 550px;
-        }
-
-        video {
-            width: 400px;
-            max-width: 100%;
-            border-radius: 12px;
-            border: 4px solid #fecdd3;
-            box-shadow: 0 5px 15px rgba(127, 29, 29, 0.15);
-        }
-
-        .media-box {
-            background: #ffffff;
+        .box {
+            background: #ffe4e6;
+            border: 3px solid #dc2626;
             padding: 20px;
-            border-radius: 12px;
+            margin-bottom: 15px;
+            text-align: center;
+            font-weight: bold;
         }
 
-        .footer {
+        .fixed-width {
+            width: 400px;
+        }
+
+        .percentage-width {
+            width: 70%;
+        }
+
+        .max-width {
+            width: 100%;
+            max-width: 600px;
+        }
+
+        .min-width {
+            width: 50%;
+            min-width: 300px;
+        }
+
+        .fixed-height {
+            height: 120px;
+        }
+
+        .min-height {
+            min-height: 150px;
+        }
+
+        .max-height {
+            max-height: 180px;
+            overflow: auto;
+        }
+
+        .responsive-box {
+            width: 100%;
+            height: auto;
+            min-height: 100px;
+        }
+
+        footer {
             background: #450a0a;
             color: #fecdd3;
             text-align: center;
             padding: 20px;
-            font-size: 14px;
         }
 
         @media (max-width: 600px) {
             body {
-                padding: 20px 10px;
+                padding: 15px 10px;
             }
 
-            .header h1 {
+            header h1 {
                 font-size: 28px;
             }
 
-            .content {
-                padding: 25px 15px;
-            }
-
-            .media-section {
+            main {
                 padding: 20px 15px;
             }
 
-            h2 {
-                font-size: 23px;
+            .fixed-width {
+                width: 100%;
+            }
+
+            .percentage-width,
+            .min-width {
+                width: 100%;
+                min-width: 0;
             }
         }
     </style>
@@ -121,44 +146,69 @@
 
     <div class="container">
 
-        <div class="header">
-            <h1>Audio and Video</h1>
-            <p>HTML Multimedia Elements</p>
-        </div>
+        <header>
+            <h1>CSS Width, Height & Sizing</h1>
+            <p>Demonstration of Different CSS Sizing Properties</p>
+        </header>
 
-        <div class="content">
+        <main>
 
-            <div class="media-section">
+            <section class="card">
+                <h2>Width Properties</h2>
 
-                <h2>Audio</h2>
-
-                <div class="media-box">
-                    <audio controls>
-                        <source src="music.mp3" type="audio/mpeg">
-                        Your browser does not support the audio element.
-                    </audio>
+                <div class="box fixed-width">
+                    Fixed Width: 400px
                 </div>
 
-            </div>
-
-            <div class="media-section">
-
-                <h2>Video</h2>
-
-                <div class="media-box">
-                    <video controls>
-                        <source src="video.mp4" type="video/mp4">
-                        Your browser does not support the video element.
-                    </video>
+                <div class="box percentage-width">
+                    Percentage Width: 70%
                 </div>
 
-            </div>
+                <div class="box max-width">
+                    Maximum Width: 600px
+                </div>
 
-        </div>
+                <div class="box min-width">
+                    Minimum Width: 300px
+                </div>
+            </section>
 
-        <div class="footer">
-            HTML Practical &nbsp; | &nbsp; Audio and Video
-        </div>
+            <section class="card">
+                <h2>Height Properties</h2>
+
+                <div class="box fixed-height">
+                    Fixed Height: 120px
+                </div>
+
+                <div class="box min-height">
+                    Minimum Height: 150px
+                </div>
+
+                <div class="box max-height">
+                    Maximum Height: 180px
+                    <br><br>
+                    This box demonstrates the max-height property.
+                    When the content becomes larger than the available
+                    height, scrolling can be used to view the remaining content.
+                    <br><br>
+                    CSS provides different sizing properties to control
+                    the dimensions of webpage elements.
+                </div>
+            </section>
+
+            <section class="card">
+                <h2>Responsive Sizing</h2>
+
+                <div class="box responsive-box">
+                    Width: 100% and flexible height
+                </div>
+            </section>
+
+        </main>
+
+        <footer>
+            CSS Practical Program 06
+        </footer>
 
     </div>
 

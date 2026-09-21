@@ -3,8 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>Iframe Example</title>
+    <title>CSS Question 7 - Positioning</title>
 
     <style>
         * {
@@ -16,97 +15,155 @@
         body {
             font-family: Arial, sans-serif;
             background: #fff5f6;
-            color: #475569;
-            line-height: 1.6;
-            padding: 40px 20px;
+            color: #450a0a;
+            padding: 30px 15px;
         }
 
         .container {
             max-width: 1000px;
             margin: auto;
-            background: #ffffff;
-            border-radius: 18px;
+            background: white;
+            border-radius: 20px;
             overflow: hidden;
             box-shadow: 0 10px 30px rgba(127, 29, 29, 0.15);
         }
 
-        .header {
+        header {
             background: linear-gradient(135deg, #450a0a, #991b1b, #dc2626);
             color: white;
             text-align: center;
-            padding: 45px 25px;
+            padding: 45px 20px;
         }
 
-        .header h1 {
-            font-size: 36px;
+        header h1 {
+            font-size: 38px;
             margin-bottom: 10px;
         }
 
-        .header p {
+        header p {
             color: #ffe4e6;
-            font-size: 16px;
+            font-size: 17px;
         }
 
-        .content {
+        main {
             padding: 40px;
+            display: grid;
+            gap: 30px;
         }
 
-        .iframe-section {
+        .card {
             background: #fff1f2;
-            border-left: 5px solid #dc2626;
+            padding: 25px;
+            border-radius: 15px;
+            border-left: 6px solid #b91c1c;
+        }
+
+        .card h2 {
+            color: #991b1b;
+            margin-bottom: 15px;
+        }
+
+        .demo-area {
+            background: #ffe4e6;
             padding: 25px;
             border-radius: 12px;
-            text-align: center;
+            min-height: 150px;
+            margin-top: 15px;
         }
 
-        h2 {
-            color: #991b1b;
-            font-size: 25px;
+        .box {
+            width: 180px;
+            padding: 18px;
+            text-align: center;
+            background: #dc2626;
+            color: white;
+            border-radius: 10px;
+            font-weight: bold;
+        }
+
+        .static-box {
+            position: static;
+        }
+
+        .relative-box {
+            position: relative;
+            left: 40px;
+            top: 15px;
+            background: #991b1b;
+        }
+
+        .absolute-area {
+            position: relative;
+            height: 180px;
+        }
+
+        .absolute-box {
+            position: absolute;
+            right: 20px;
+            bottom: 20px;
+            background: #7f1d1d;
+        }
+
+        .sticky-box {
+            position: sticky;
+            top: 10px;
+            background: #b91c1c;
             margin-bottom: 20px;
         }
 
-        .iframe-box {
-            background: #ffffff;
-            padding: 15px;
-            border-radius: 12px;
-            box-shadow: 0 5px 15px rgba(127, 29, 29, 0.1);
-        }
-
-        iframe {
-            width: 100%;
-            height: 500px;
-            border: 3px solid #fecdd3;
+        .scroll-content {
+            height: 300px;
+            overflow-y: auto;
+            background: #fff;
+            padding: 20px;
+            border: 2px solid #fecdd3;
             border-radius: 10px;
-            background: #ffffff;
         }
 
-        .footer {
+        .scroll-content p {
+            line-height: 2;
+            margin-bottom: 15px;
+        }
+
+        .fixed-box {
+            position: fixed;
+            right: 20px;
+            bottom: 20px;
+            background: #450a0a;
+            color: white;
+            padding: 15px 20px;
+            border-radius: 30px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            z-index: 1000;
+        }
+
+        footer {
             background: #450a0a;
             color: #fecdd3;
             text-align: center;
             padding: 20px;
-            font-size: 14px;
         }
 
         @media (max-width: 600px) {
             body {
-                padding: 20px 10px;
+                padding: 15px 10px;
             }
 
-            .header h1 {
+            header h1 {
                 font-size: 28px;
             }
 
-            .content {
-                padding: 25px 15px;
-            }
-
-            .iframe-section {
+            main {
                 padding: 20px 15px;
             }
 
-            iframe {
-                height: 400px;
+            .relative-box {
+                left: 20px;
+            }
+
+            .fixed-box {
+                right: 10px;
+                bottom: 10px;
             }
         }
     </style>
@@ -116,34 +173,98 @@
 
     <div class="container">
 
-        <div class="header">
-            <h1>My Iframe Webpage</h1>
-            <p>Embedding an External Webpage</p>
-        </div>
+        <header>
+            <h1>CSS Positioning</h1>
+            <p>Static • Relative • Absolute • Fixed • Sticky</p>
+        </header>
 
-        <div class="content">
+        <main>
 
-            <div class="iframe-section">
+            <section class="card">
+                <h2>1. Static Position</h2>
 
-                <h2>Wikipedia</h2>
+                <div class="demo-area">
+                    <div class="box static-box">
+                        Static
+                    </div>
+                </div>
+            </section>
 
-                <div class="iframe-box">
+            <section class="card">
+                <h2>2. Relative Position</h2>
 
-                    <iframe
-                        src="https://www.wikipedia.org"
-                        title="Wikipedia Website">
-                    </iframe>
+                <div class="demo-area">
+                    <div class="box relative-box">
+                        Relative
+                    </div>
+                </div>
+            </section>
+
+            <section class="card">
+                <h2>3. Absolute Position</h2>
+
+                <div class="demo-area absolute-area">
+                    <div class="box absolute-box">
+                        Absolute
+                    </div>
+                </div>
+            </section>
+
+            <section class="card">
+                <h2>4. Sticky Position</h2>
+
+                <div class="scroll-content">
+
+                    <div class="box sticky-box">
+                        Sticky Element
+                    </div>
+
+                    <p>
+                        Scroll this area to see the sticky element remain
+                        visible while the content moves.
+                    </p>
+
+                    <p>
+                        CSS positioning allows elements to be placed at
+                        specific locations on a webpage.
+                    </p>
+
+                    <p>
+                        The sticky element changes its position when the
+                        user scrolls through its container.
+                    </p>
+
+                    <p>
+                        This is useful for navigation bars, headings,
+                        menus, and other important elements.
+                    </p>
+
+                    <p>
+                        Continue scrolling to observe the sticky behavior.
+                    </p>
 
                 </div>
+            </section>
 
-            </div>
+            <section class="card">
+                <h2>5. Fixed Position</h2>
 
-        </div>
+                <p>
+                    The fixed element stays in the same position even when
+                    the webpage is scrolled.
+                </p>
+            </section>
 
-        <div class="footer">
-            HTML Practical &nbsp; | &nbsp; Iframe Example
-        </div>
+        </main>
 
+        <footer>
+            CSS Practical Program 07
+        </footer>
+
+    </div>
+
+    <div class="fixed-box">
+        Fixed Element
     </div>
 
 </body>

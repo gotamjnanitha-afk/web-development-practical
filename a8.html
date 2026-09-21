@@ -3,8 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>Student Table</title>
+    <title>CSS Question 8 - Float and Clear</title>
 
     <style>
         * {
@@ -16,113 +15,136 @@
         body {
             font-family: Arial, sans-serif;
             background: #fff5f6;
-            color: #475569;
-            line-height: 1.6;
-            padding: 40px 20px;
+            color: #450a0a;
+            padding: 30px 15px;
         }
 
         .container {
-            max-width: 900px;
+            max-width: 1000px;
             margin: auto;
-            background: #ffffff;
-            border-radius: 18px;
+            background: white;
+            border-radius: 20px;
             overflow: hidden;
             box-shadow: 0 10px 30px rgba(127, 29, 29, 0.15);
         }
 
-        .header {
+        header {
             background: linear-gradient(135deg, #450a0a, #991b1b, #dc2626);
             color: white;
             text-align: center;
-            padding: 45px 25px;
+            padding: 45px 20px;
         }
 
-        .header h1 {
-            font-size: 36px;
+        header h1 {
+            font-size: 38px;
             margin-bottom: 10px;
         }
 
-        .header p {
+        header p {
             color: #ffe4e6;
-            font-size: 16px;
+            font-size: 17px;
         }
 
-        .content {
+        main {
             padding: 40px;
         }
 
-        .table-box {
+        .card {
             background: #fff1f2;
-            border-left: 5px solid #dc2626;
             padding: 25px;
-            border-radius: 12px;
-            overflow-x: auto;
+            border-left: 6px solid #b91c1c;
+            border-radius: 15px;
+            margin-bottom: 25px;
         }
 
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            background: #ffffff;
-        }
-
-        th {
-            background: #991b1b;
-            color: #ffffff;
-            padding: 15px;
-            text-align: center;
-            font-size: 16px;
-            border: 1px solid #7f1d1d;
-        }
-
-        td {
-            padding: 14px;
-            text-align: center;
-            border: 1px solid #fecdd3;
-            font-size: 16px;
-        }
-
-        tr:nth-child(even) td {
-            background: #fff5f6;
-        }
-
-        tr:hover td {
-            background: #ffe4e6;
-        }
-
-        .total {
-            font-weight: bold;
+        .card h2 {
             color: #991b1b;
+            margin-bottom: 15px;
         }
 
-        .footer {
+        .float-left {
+            float: left;
+            width: 180px;
+            height: 120px;
+            background: #dc2626;
+            color: white;
+            margin: 0 20px 15px 0;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            text-align: center;
+        }
+
+        .float-right {
+            float: right;
+            width: 180px;
+            height: 120px;
+            background: #991b1b;
+            color: white;
+            margin: 0 0 15px 20px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            text-align: center;
+        }
+
+        .text {
+            font-size: 17px;
+            line-height: 1.8;
+        }
+
+        .clear-section {
+            margin-top: 30px;
+            padding: 20px;
+            background: #ffe4e6;
+            border-radius: 12px;
+            clear: both;
+        }
+
+        .clear-box {
+            background: #7f1d1d;
+            color: white;
+            padding: 20px;
+            margin-top: 15px;
+            clear: both;
+            border-radius: 10px;
+            text-align: center;
+            font-weight: bold;
+        }
+
+        .clearfix {
+            overflow: auto;
+        }
+
+        footer {
             background: #450a0a;
             color: #fecdd3;
             text-align: center;
             padding: 20px;
-            font-size: 14px;
         }
 
         @media (max-width: 600px) {
             body {
-                padding: 20px 10px;
+                padding: 15px 10px;
             }
 
-            .header h1 {
+            header h1 {
                 font-size: 28px;
             }
 
-            .content {
-                padding: 25px 15px;
+            main {
+                padding: 20px 15px;
             }
 
-            .table-box {
-                padding: 15px;
-            }
-
-            th,
-            td {
-                padding: 10px;
-                font-size: 14px;
+            .float-left,
+            .float-right {
+                float: none;
+                width: 100%;
+                margin: 0 0 15px 0;
             }
         }
     </style>
@@ -132,53 +154,62 @@
 
     <div class="container">
 
-        <div class="header">
-            <h1>Student Details</h1>
-            <p>Student Information Table</p>
-        </div>
+        <header>
+            <h1>CSS Float & Clear</h1>
+            <p>Demonstration of Float and Clear Properties</p>
+        </header>
 
-        <div class="content">
+        <main>
 
-            <div class="table-box">
+            <section class="card clearfix">
+                <h2>Float Left</h2>
 
-                <table border="1">
+                <div class="float-left">
+                    Float Left
+                </div>
 
-                    <tr>
-                        <th colspan="3">Student Information</th>
-                    </tr>
+                <p class="text">
+                    The float property allows an element to move to the
+                    left or right side of its container. When an element
+                    is floated to the left, the text can flow around it.
+                    This technique was commonly used for creating layouts
+                    and positioning images beside text.
+                </p>
+            </section>
 
-                    <tr>
-                        <th>Name</th>
-                        <th>Age</th>
-                        <th>Course</th>
-                    </tr>
+            <section class="card clearfix">
+                <h2>Float Right</h2>
 
-                    <tr>
-                        <td>Rahul</td>
-                        <td>20</td>
-                        <td>CSE</td>
-                    </tr>
+                <div class="float-right">
+                    Float Right
+                </div>
 
-                    <tr>
-                        <td>Priya</td>
-                        <td>19</td>
-                        <td>Data Science</td>
-                    </tr>
+                <p class="text">
+                    An element can also be floated to the right using
+                    the float property. The surrounding text flows around
+                    the floated element. Float can be useful for simple
+                    layouts and content positioning.
+                </p>
+            </section>
 
-                    <tr>
-                        <td rowspan="2" class="total">Total Students</td>
-                        <td colspan="2" class="total">2</td>
-                    </tr>
+            <section class="card">
+                <h2>Clear Property</h2>
 
-                </table>
+                <p class="text">
+                    The clear property prevents an element from being
+                    positioned next to floated elements.
+                </p>
 
-            </div>
+                <div class="clear-box">
+                    Clear: Both — This element starts below floated elements
+                </div>
+            </section>
 
-        </div>
+        </main>
 
-        <div class="footer">
-            HTML Practical &nbsp; | &nbsp; Student Table
-        </div>
+        <footer>
+            CSS Practical Program 08
+        </footer>
 
     </div>
 

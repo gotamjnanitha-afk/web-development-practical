@@ -3,8 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>Basic Webpage</title>
+    <title>CSS Question 1</title>
 
     <style>
         * {
@@ -16,104 +15,96 @@
         body {
             font-family: Arial, sans-serif;
             background: #fff5f6;
-            color: #475569;
-            line-height: 1.7;
-            padding: 40px 20px;
+            color: #450a0a;
+            padding: 30px 15px;
         }
 
         .container {
-            max-width: 900px;
+            max-width: 1000px;
             margin: auto;
-            background: #ffffff;
-            border-radius: 18px;
+            background: white;
+            border-radius: 20px;
             overflow: hidden;
             box-shadow: 0 10px 30px rgba(127, 29, 29, 0.15);
         }
 
-        .header {
+        header {
             background: linear-gradient(135deg, #450a0a, #991b1b, #dc2626);
             color: white;
             text-align: center;
-            padding: 45px 25px;
+            padding: 45px 20px;
         }
 
-        .header h1 {
-            font-size: 36px;
+        header h1 {
+            font-size: 38px;
             margin-bottom: 10px;
         }
 
-        .header p {
+        header p {
             color: #ffe4e6;
-            font-size: 16px;
-        }
-
-        .content {
-            padding: 40px;
-        }
-
-        h2 {
-            color: #991b1b;
-            font-size: 28px;
-            margin-bottom: 15px;
-            border-left: 5px solid #dc2626;
-            padding-left: 12px;
-        }
-
-        h3 {
-            color: #be123c;
-            font-size: 22px;
-            margin-top: 30px;
-        }
-
-        p {
             font-size: 17px;
+        }
+
+        main {
+            padding: 40px;
+            display: grid;
+            gap: 25px;
+        }
+
+        .card {
+            padding: 28px;
+            border-radius: 15px;
+            background: #fff1f2;
+            border-left: 6px solid #b91c1c;
+        }
+
+        .card h2 {
+            color: #991b1b;
             margin-bottom: 15px;
         }
 
-        .info-box {
-            background: #fff1f2;
-            border-left: 5px solid #dc2626;
-            padding: 20px;
-            margin: 25px 0;
-            border-radius: 10px;
+        .card p {
+            font-size: 17px;
+            line-height: 1.7;
         }
 
-        .line-example {
+        .internal-box {
             background: #ffe4e6;
-            padding: 20px;
-            border-radius: 10px;
-            margin-top: 20px;
             color: #7f1d1d;
-            font-weight: 500;
+            padding: 20px;
+            border-radius: 12px;
+            border: 2px solid #fda4af;
+            font-size: 18px;
+            font-weight: bold;
         }
 
-        .footer {
+        .external-box {
+            background: #7f1d1d;
+            color: white;
+            padding: 20px;
+            border-radius: 12px;
+            border: 3px solid #dc2626;
+            font-size: 18px;
+        }
+
+        footer {
             background: #450a0a;
             color: #fecdd3;
             text-align: center;
             padding: 20px;
-            font-size: 14px;
         }
 
         @media (max-width: 600px) {
             body {
-                padding: 20px 10px;
+                padding: 15px 10px;
             }
 
-            .header h1 {
+            header h1 {
                 font-size: 28px;
             }
 
-            .content {
-                padding: 25px 20px;
-            }
-
-            h2 {
-                font-size: 24px;
-            }
-
-            p {
-                font-size: 16px;
+            main {
+                padding: 20px 15px;
             }
         }
     </style>
@@ -123,35 +114,42 @@
 
     <div class="container">
 
-        <div class="header">
-            <h1>Welcome to My Webpage</h1>
-            <p>HTML Practical Program</p>
-        </div>
+        <header>
+            <h1>CSS Styling</h1>
+            <p>Inline, Internal and External CSS</p>
+        </header>
 
-        <div class="content">
+        <main>
 
-            <h2>About HTML</h2>
+            <section class="card">
+                <h2>1. Inline CSS</h2>
 
-            <div class="info-box">
-                <p>HTML stands for HyperText Markup Language.</p>
-                <p>It is used to create webpages.</p>
-            </div>
+                <p style="color: #dc2626; font-size: 21px; font-weight: bold;">
+                    This text is styled using Inline CSS.
+                </p>
+            </section>
 
-            <h3>Line Break Example</h3>
+            <section class="card">
+                <h2>2. Internal CSS</h2>
 
-            <div class="line-example">
-                This is the first line.<br>
-                This is the second line.<br>
-                This is the third line.
-            </div>
+                <div class="internal-box">
+                    This box is styled using Internal CSS.
+                </div>
+            </section>
 
-            <h3>Thank You</h3>
+            <section class="card">
+                <h2>3. External CSS</h2>
 
-        </div>
+                <div class="external-box">
+                    This section represents styling applied using an External CSS file.
+                </div>
+            </section>
 
-        <div class="footer">
-            HTML Practical &nbsp; | &nbsp; Basic Webpage
-        </div>
+        </main>
+
+        <footer>
+            CSS Practical Program 01
+        </footer>
 
     </div>
 

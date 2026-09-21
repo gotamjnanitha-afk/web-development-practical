@@ -3,8 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>Student Table</title>
+    <title>CSS Question 3 - Colors Backgrounds Borders</title>
 
     <style>
         * {
@@ -16,114 +15,125 @@
         body {
             font-family: Arial, sans-serif;
             background: #fff5f6;
-            color: #475569;
-            line-height: 1.6;
-            padding: 40px 20px;
+            color: #450a0a;
+            padding: 30px 15px;
         }
 
         .container {
-            max-width: 900px;
+            max-width: 1000px;
             margin: auto;
-            background: #ffffff;
-            border-radius: 18px;
+            background: white;
+            border-radius: 20px;
             overflow: hidden;
             box-shadow: 0 10px 30px rgba(127, 29, 29, 0.15);
         }
 
-        .header {
+        header {
             background: linear-gradient(135deg, #450a0a, #991b1b, #dc2626);
             color: white;
             text-align: center;
-            padding: 45px 25px;
+            padding: 45px 20px;
         }
 
-        .header h1 {
-            font-size: 36px;
+        header h1 {
+            font-size: 38px;
             margin-bottom: 10px;
         }
 
-        .header p {
+        header p {
             color: #ffe4e6;
-            font-size: 16px;
+            font-size: 17px;
         }
 
-        .content {
+        main {
             padding: 40px;
+            display: grid;
+            gap: 25px;
         }
 
-        .table-box {
-            background: #fff1f2;
-            border-left: 5px solid #dc2626;
+        .card {
             padding: 25px;
-            border-radius: 12px;
-            overflow-x: auto;
+            border-radius: 15px;
         }
 
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            background: #ffffff;
-            border-radius: 10px;
-            overflow: hidden;
+        .card h2 {
+            margin-bottom: 15px;
         }
 
-        th {
-            background: #991b1b;
-            color: #ffffff;
-            padding: 15px;
-            text-align: center;
-            font-size: 16px;
+        .card p {
+            font-size: 17px;
+            line-height: 1.6;
         }
 
-        td {
-            padding: 14px;
-            text-align: center;
-            border: 1px solid #fecdd3;
-            font-size: 16px;
-        }
-
-        tr:nth-child(even) td {
-            background: #fff5f6;
-        }
-
-        tr:hover td {
+        .colors {
             background: #ffe4e6;
-        }
-
-        .total {
-            font-weight: bold;
             color: #991b1b;
+            border: 3px solid #dc2626;
         }
 
-        .footer {
+        .background {
+            background: linear-gradient(135deg, #7f1d1d, #dc2626);
+            color: white;
+            border: 3px solid #450a0a;
+        }
+
+        .background h2 {
+            color: #fecdd3;
+        }
+
+        .borders {
+            background: #fff1f2;
+            border: 5px dashed #b91c1c;
+            color: #7f1d1d;
+        }
+
+        .border-examples {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .border-box {
+            padding: 20px;
+            text-align: center;
+            background: white;
+        }
+
+        .solid {
+            border: 3px solid #dc2626;
+        }
+
+        .dashed {
+            border: 3px dashed #991b1b;
+        }
+
+        .dotted {
+            border: 3px dotted #b91c1c;
+        }
+
+        footer {
             background: #450a0a;
             color: #fecdd3;
             text-align: center;
             padding: 20px;
-            font-size: 14px;
         }
 
-        @media (max-width: 600px) {
+        @media (max-width: 650px) {
             body {
-                padding: 20px 10px;
+                padding: 15px 10px;
             }
 
-            .header h1 {
+            header h1 {
                 font-size: 28px;
             }
 
-            .content {
-                padding: 25px 15px;
+            main {
+                padding: 20px 15px;
             }
 
-            .table-box {
-                padding: 15px;
-            }
-
-            th,
-            td {
-                padding: 10px;
-                font-size: 14px;
+            .border-examples {
+                grid-template-columns: 1fr;
             }
         }
     </style>
@@ -133,53 +143,58 @@
 
     <div class="container">
 
-        <div class="header">
-            <h1>Student Details</h1>
-            <p>Student Information Table</p>
-        </div>
+        <header>
+            <h1>CSS Colors, Backgrounds & Borders</h1>
+            <p>Demonstration of Basic CSS Styling Properties</p>
+        </header>
 
-        <div class="content">
+        <main>
 
-            <div class="table-box">
+            <section class="card colors">
+                <h2>CSS Colors</h2>
+                <p>
+                    CSS colors can be used to change the text color,
+                    background color, and other visual elements of a webpage.
+                </p>
+            </section>
 
-                <table border="1">
+            <section class="card background">
+                <h2>CSS Backgrounds</h2>
+                <p>
+                    Background colors and gradients can be used to create
+                    attractive sections and improve the appearance of a webpage.
+                </p>
+            </section>
 
-                    <tr>
-                        <th colspan="3">Student Information</th>
-                    </tr>
+            <section class="card borders">
+                <h2>CSS Borders</h2>
+                <p>
+                    CSS borders can be solid, dashed, dotted, and can have
+                    different widths and colors.
+                </p>
 
-                    <tr>
-                        <th>Name</th>
-                        <th>Age</th>
-                        <th>Course</th>
-                    </tr>
+                <div class="border-examples">
 
-                    <tr>
-                        <td>Rahul</td>
-                        <td>20</td>
-                        <td>CSE</td>
-                    </tr>
+                    <div class="border-box solid">
+                        <strong>Solid Border</strong>
+                    </div>
 
-                    <tr>
-                        <td>Priya</td>
-                        <td>19</td>
-                        <td>Data Science</td>
-                    </tr>
+                    <div class="border-box dashed">
+                        <strong>Dashed Border</strong>
+                    </div>
 
-                    <tr>
-                        <td rowspan="2" class="total">Total Students</td>
-                        <td colspan="2" class="total">2</td>
-                    </tr>
+                    <div class="border-box dotted">
+                        <strong>Dotted Border</strong>
+                    </div>
 
-                </table>
+                </div>
+            </section>
 
-            </div>
+        </main>
 
-        </div>
-
-        <div class="footer">
-            HTML Practical &nbsp; | &nbsp; Student Table
-        </div>
+        <footer>
+            CSS Practical Program 03
+        </footer>
 
     </div>
 
